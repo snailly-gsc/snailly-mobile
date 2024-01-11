@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "729140941500",
+    "project_id": "snaily-c88ab",
+    "storage_bucket": "snaily-c88ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729140941500:android:7b372e49e0ebdda3b736b9",
+        "android_client_info": {
+          "package_name": "com.snailly.appname"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729140941500-calu34sno0jbfaj2s601308c5i59cb2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL69tFirSFZs_ZUil95qDv582uIL0Y2jU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729140941500-calu34sno0jbfaj2s601308c5i59cb2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
