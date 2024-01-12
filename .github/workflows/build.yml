@@ -1,0 +1,16 @@
+name: 🔨 Build
+
+permissions: write-all
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    tags:
+      - "v*.*.*"
+
+jobs:
+  clientDeploy:
+    name: 🔨 Client Deploy
+    uses: ./.github/workflows/__client_deploy.yml
+    secrets: inherit
