@@ -1,12 +1,15 @@
 ## Snailly Mobile
 <img width="1600" alt="banner" src="https://github.com/snailly-hackfest/snailly-mobile/assets/59524975/acbc3fe1-b8e8-4be0-ae34-c1509df00e9c">
 
-### Description
+## Description
 <p>Snailly is an application for parents to control and supervise their children's activities on the internet.
 supervise their children's activities on the internet, where children can explore the world of the internet safely and parents won't worry about the dangers of the internet.
  worry about the dangers of the internet. In this stage 2 we create the "Searching On Internet" feature according to the sequence diagram that we have proposed.</p>
 
-### Installation
+## Demo
+You can install the Demo [here](https://github.com/snailly-hackfest/snailly-mobile/releases/tag/1.0).
+
+## Installation
 
 1. Clone the repository
    ```sh
