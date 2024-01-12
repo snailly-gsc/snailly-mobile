@@ -80,10 +80,10 @@ class LoginParentsView extends GetView<LoginParentsController> {
                           const SizedBox(height: 8),
                           InputText(
                             controller: controller.emailController,
-                            hint: 'Tulis email di sini',
+                            hint: 'Type your email here',
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Email tidak boleh kosong';
+                                return 'Email cannot be empty';
                               }
 
                               return null;
@@ -99,12 +99,12 @@ class LoginParentsView extends GetView<LoginParentsController> {
                           const SizedBox(height: 8),
                           InputPassword(
                             controller: controller.passwordController,
-                            hint: 'Tulis password di sini',
+                            hint: 'Type your password here',
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Password tidak boleh kosong';
+                                return 'Password cannot be empty';
                               } else if (value.length < 8) {
-                                return 'Password minimal 8 karakter';
+                                return 'Password at least 8 characters';
                               }
 
                               return null;
@@ -113,7 +113,7 @@ class LoginParentsView extends GetView<LoginParentsController> {
                           const SizedBox(height: 30),
                           // * Button
                           Button(
-                            text: 'Masuk',
+                            text: 'Login',
                             onTap: () async {
                               if (controller.formKey.currentState!.validate()) {
                                 controller.loginParent();
@@ -126,7 +126,7 @@ class LoginParentsView extends GetView<LoginParentsController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Tidak Punya Akun?',
+                                'Dont have an account?',
                                 style: semiBoldNunitoFontStyle.copyWith(
                                     color: grayColor),
                               ),
@@ -136,7 +136,7 @@ class LoginParentsView extends GetView<LoginParentsController> {
                                   Get.toNamed(Routes.REGISTER_PARENT);
                                 },
                                 child: Text(
-                                  'Daftar',
+                                  'Register',
                                   style: semiBoldNunitoFontStyle.copyWith(
                                     color: successColor,
                                   ),
