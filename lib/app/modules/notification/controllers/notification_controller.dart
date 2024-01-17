@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:snailly/app/data/models/notification_model.dart';
-import 'package:snailly/app/utils/constanta.dart';
 import 'package:http/http.dart' as http;
 
 class NotificationController extends GetxController {
@@ -26,7 +26,7 @@ class NotificationController extends GetxController {
 
       isLoading.value = true;
       var response = await http.get(
-        Uri.parse(baseUrl + _endPoint),
+        Uri.parse(dotenv.get('BASE_URL') + _endPoint),
         headers: {'Authorization': 'Bearer $token'},
       );
 
