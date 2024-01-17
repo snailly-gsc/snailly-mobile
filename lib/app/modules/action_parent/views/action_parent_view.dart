@@ -48,7 +48,7 @@ class ActionParentView extends GetView<ActionParentController> {
                             ),
                             const SizedBox(height: 16),
                             Text(
-                              "Lakukan Tindakan!",
+                              "Choose Action!",
                               textAlign: TextAlign.center,
                               style: headingPrimaryFontStyle,
                             ),
@@ -74,7 +74,7 @@ class ActionParentView extends GetView<ActionParentController> {
                       children: [
                         const SizedBox(height: 50),
                         Button(
-                          text: "Blokir Akses",
+                          text: "Block Access",
                           buttonStyle: makeButton(redColor),
                           onTap: () {
                             controller.updateGrantAccess('False');
@@ -82,7 +82,7 @@ class ActionParentView extends GetView<ActionParentController> {
                         ),
                         const SizedBox(height: 16),
                         Button(
-                          text: "Izinkan Akses",
+                          text: "Allow Access",
                           onTap: () {
                             controller.updateGrantAccess('True');
                           },
@@ -97,7 +97,7 @@ class ActionParentView extends GetView<ActionParentController> {
                             );
                           },
                           child: Text(
-                            'Pratinjau website yang dikunjungi',
+                            'Preview of visited websites',
                             style: semiBoldNunitoFontStyle.copyWith(
                               decoration: TextDecoration.underline,
                             ),
