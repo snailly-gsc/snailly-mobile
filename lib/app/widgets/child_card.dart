@@ -33,7 +33,7 @@ class ChildCard extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                'Yakin untuk menghapus?',
+                'Are sure to delete?',
                 textAlign: TextAlign.center,
                 style: boldNunitoFontStyle.copyWith(
                   color: blackColor,
@@ -42,7 +42,7 @@ class ChildCard extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Data dengan nama anak ${child.name} akan dihapus permanen',
+                'Data with child name ${child.name} will be deleted permanently',
                 textAlign: TextAlign.center,
                 style: boldNunitoFontStyle.copyWith(color: grayColor),
               ),
@@ -66,7 +66,7 @@ class ChildCard extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(6)),
                         ),
                       ),
-                      child: Text('Batal',
+                      child: Text('Cancel',
                           style: boldNunitoFontStyle.copyWith(
                             color: grayColor,
                           )),
@@ -76,7 +76,7 @@ class ChildCard extends StatelessWidget {
                     ),
                   ),
                   Button(
-                    text: 'Ya',
+                    text: 'Sure',
                     width: 125,
                     height: 45,
                     buttonStyle: makeButton(lightGreenColor, borderRadius: 6),
@@ -106,16 +106,16 @@ class ChildCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Nama Anak',
+                  'Child Name',
                   style: boldNunitoFontStyle.copyWith(color: blackColor),
                 ),
                 const SizedBox(height: 8),
                 InputText(
                   controller: controller.namaEditController,
-                  hint: 'Tulis nama di sini',
+                  hint: 'Type name here',
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Nama tidak boleh kosong';
+                      return 'Name cannot be empty';
                     }
 
                     return null;
@@ -141,7 +141,7 @@ class ChildCard extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(6)),
                           ),
                         ),
-                        child: Text('Batal',
+                        child: Text('Cancel',
                             style: boldNunitoFontStyle.copyWith(
                               color: grayColor,
                             )),
@@ -151,7 +151,7 @@ class ChildCard extends StatelessWidget {
                       ),
                     ),
                     Button(
-                      text: 'Sunting',
+                      text: 'Edit',
                       width: 135,
                       height: 45,
                       buttonStyle: makeButton(lightGreenColor, borderRadius: 6),

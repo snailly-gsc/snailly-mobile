@@ -29,7 +29,7 @@ class ProfileView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 30),
                   Text(
-                    "Profil",
+                    "Profile",
                     style: extraBoldNunitoFontStyle.copyWith(fontSize: 18),
                   ),
                   const SizedBox(height: 10),
@@ -41,18 +41,18 @@ class ProfileView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // * Nama
+                  // * Name
                   Text(
-                    'Nama',
+                    'Name',
                     style: boldNunitoFontStyle.copyWith(color: blackColor),
                   ),
                   const SizedBox(height: 8),
                   InputText(
                     controller: controller.namaController,
-                    hint: 'Tulis nama di sini',
+                    hint: 'Type name here',
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Nama tidak boleh kosong';
+                        return 'Name cannot be empty';
                       }
 
                       return null;
@@ -67,10 +67,10 @@ class ProfileView extends StatelessWidget {
                   const SizedBox(height: 8),
                   InputText(
                     controller: controller.emailController,
-                    hint: 'Tulis email di sini',
+                    hint: 'Type email here',
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Email tidak boleh kosong';
+                        return 'Email cannot be empty';
                       }
 
                       return null;
@@ -82,7 +82,7 @@ class ProfileView extends StatelessWidget {
                     children: [
                       GestureDetector(
                         child: Text(
-                          'Sunting Password?',
+                          'Edit Password?',
                           style: boldNunitoFontStyle.copyWith(
                             color: successColor,
                           ),
@@ -121,12 +121,12 @@ class ProfileView extends StatelessWidget {
                                 const SizedBox(height: 8),
                                 InputPassword(
                                   controller: controller.oldPassword,
-                                  hint: 'Tulis password di sini',
+                                  hint: 'Type your password here',
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'Password tidak boleh kosong';
+                                      return 'Password cannot be empty';
                                     } else if (value.length < 8) {
-                                      return 'Password minimal 8 karakter';
+                                      return 'Password must be at least 8 characters';
                                     }
 
                                     return null;
@@ -142,12 +142,12 @@ class ProfileView extends StatelessWidget {
                                 const SizedBox(height: 8),
                                 InputPassword(
                                   controller: controller.newPassword,
-                                  hint: 'Tulis password di sini',
+                                  hint: 'Type your password here',
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'Password tidak boleh kosong';
+                                      return 'Password cannot be empty';
                                     } else if (value.length < 8) {
-                                      return 'Password minimal 8 karakter';
+                                      return 'Password must be at least 8 characters';
                                     }
 
                                     return null;
@@ -163,15 +163,15 @@ class ProfileView extends StatelessWidget {
                                 const SizedBox(height: 8),
                                 InputPassword(
                                   controller: controller.confNewPassword,
-                                  hint: 'Tulis password di sini',
+                                  hint: 'Type your password here',
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'Password tidak boleh kosong';
+                                      return 'Password cannot be empty';
                                     } else if (value.length < 8) {
-                                      return 'Password minimal 8 karakter';
+                                      return 'Password must be at least 8 characters';
                                     } else if (controller.newPassword.text !=
                                         value) {
-                                      return 'Password dan konfirmasi password tidak sesuai';
+                                      return 'Password and password confirmation do not match';
                                     }
 
                                     return null;
@@ -187,7 +187,7 @@ class ProfileView extends StatelessWidget {
                     () => controller.isLoading.value == true
                         ? makeLoadingIndicator()
                         : Button(
-                            text: 'Terapkan',
+                            text: 'Apply',
                             onTap: () {
                               if (controller.formKey.currentState!.validate()) {
                                 controller.updateProfile();
@@ -202,7 +202,7 @@ class ProfileView extends StatelessWidget {
                   ),
                   const SizedBox(height: 22),
                   Button(
-                    text: 'Keluar',
+                    text: 'Logout',
                     buttonStyle: makeButton(redColor),
                     onTap: () {
                       controller.logout();

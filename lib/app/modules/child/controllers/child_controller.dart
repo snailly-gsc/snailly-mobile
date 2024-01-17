@@ -67,7 +67,7 @@ class ChildController extends GetxController {
         if (response.statusCode == 200) {
           controller.isLoading.value = false;
           namaController.clear();
-          showSnackBar("Berhasil menambahkan data anak", status: "Berhasil");
+          showSnackBar("Successfully add child data", status: "Berhasil");
           getChilds();
         } else {
           controller.isLoading.value = false;
@@ -82,7 +82,7 @@ class ChildController extends GetxController {
           }
         }
       } else {
-        showSnackBar("Nama tidak boleh kosong!");
+        showSnackBar("The name cannot be empty!");
       }
     } catch (err) {
       controller.isLoading.value = false;
@@ -134,7 +134,7 @@ class ChildController extends GetxController {
         if (response.statusCode == 200) {
           controller.isLoading.value = false;
           namaEditController.clear();
-          openDialogSuccess('Berhasil di sunting');
+          openDialogSuccess('Edit data success');
           getChilds();
         } else {
           controller.isLoading.value = false;
@@ -149,7 +149,7 @@ class ChildController extends GetxController {
           }
         }
       } else {
-        showSnackBar("Nama tidak boleh kosong!");
+        showSnackBar("The name cannot be empty!");
       }
     } catch (err) {
       controller.isLoading.value = false;

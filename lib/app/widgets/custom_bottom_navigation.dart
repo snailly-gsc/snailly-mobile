@@ -54,7 +54,7 @@ class CustomBottomNavigation extends StatelessWidget {
                     const SizedBox(height: 4),
                     // * Title
                     Text(
-                      'Beranda',
+                      'Home',
                       style: mediumNunitoFontStyle.copyWith(
                         color:
                             ((selectedIndex == 0) ? successColor : grayColor),
@@ -64,7 +64,7 @@ class CustomBottomNavigation extends StatelessWidget {
                 ),
               ),
             ),
-            // * Kelola
+            // * Manage
             GestureDetector(
               onTap: () {
                 if (onTap != null) onTap!(1);
@@ -86,7 +86,7 @@ class CustomBottomNavigation extends StatelessWidget {
                     const SizedBox(height: 4),
                     // * Title
                     Text(
-                      'Data Anak',
+                      'Child Data',
                       style: mediumNunitoFontStyle.copyWith(
                         color:
                             ((selectedIndex == 1) ? successColor : grayColor),
@@ -118,7 +118,7 @@ class CustomBottomNavigation extends StatelessWidget {
                     const SizedBox(height: 4),
                     // * Title
                     Text(
-                      'Profil',
+                      'Profile',
                       style: mediumNunitoFontStyle.copyWith(
                         color:
                             ((selectedIndex == 2) ? successColor : grayColor),

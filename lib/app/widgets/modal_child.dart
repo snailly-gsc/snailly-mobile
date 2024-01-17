@@ -27,7 +27,7 @@ class ModalChild extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Pilih anak yang akan ditinjau',
+                  'Choose the child to be reviewed',
                   style: boldNunitoFontStyle.copyWith(
                     fontSize: 16,
                     color: blackColor,

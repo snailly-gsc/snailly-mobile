@@ -26,14 +26,14 @@ class AllowParentView extends GetView<AllowParentController> {
               ),
               const SizedBox(height: 16),
               Text(
-                "Akses Diizinkan!",
+                "Access Allowed!",
                 textAlign: TextAlign.center,
                 style: headingPrimaryFontStyle,
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width / 1.15,
                 child: Text(
-                  "Menjaga anak-anak Anda memiliki keselamatan menjelajah",
+                  "Keep your kids have a safety browsing",
                   textAlign: TextAlign.center,
                   style: headingSecondaryFontStyle,
                 ),

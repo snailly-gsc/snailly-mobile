@@ -237,7 +237,7 @@ class HomeController extends GetxController {
       }
 
       Get.back();
-      showSnackBar('Berhasil ubah grant access', status: 'Success');
+      showSnackBar('Successfully change grant access', status: 'Success');
     } catch (err) {
       isLoadingLog.value = false;
       showSnackBar(err.toString());

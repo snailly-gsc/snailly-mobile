@@ -30,8 +30,8 @@ class LoginMoveToReportiorController extends GetxController {
       isLoading.value = true;
       if (passwordController.text == data["password"]) {
         var registrationToken = await getToken();
-        final response =
-            await http.post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
+        final response = await http
+            .post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
           "email": data['email'],
           "password": passwordController.text,
           "registrationToken": registrationToken
@@ -49,7 +49,7 @@ class LoginMoveToReportiorController extends GetxController {
             'registrationToken': registrationToken,
           });
 
-          showSnackBar("Login Berhasil", status: "Berhasil");
+          showSnackBar("Login Successful", status: "Berhasil");
           isLoading.value = false;
           Get.offAndToNamed(Routes.MAIN);
         } else {
@@ -57,7 +57,7 @@ class LoginMoveToReportiorController extends GetxController {
           showSnackBar(json.decode(response.body)["message"]);
         }
       } else {
-        showSnackBar("Password Salah");
+        showSnackBar("Incorrect password");
         isLoading.value = false;
       }
     } catch (e) {

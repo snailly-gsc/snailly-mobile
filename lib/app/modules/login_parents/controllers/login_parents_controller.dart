@@ -43,8 +43,8 @@ class LoginParentsController extends GetxController {
   Future loginParent() async {
     try {
       isLoading.value = true;
-      final response =
-          await http.post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
+      final response = await http
+          .post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
         "email": emailController.text,
         "password": passwordController.text,
       });
@@ -96,7 +96,7 @@ class LoginParentsController extends GetxController {
         'name': data['name'],
       });
 
-      showSnackBar("Login berhasil!", status: "Berhasil");
+      showSnackBar("Login Successful!", status: "Berhasil");
       isLoading.value = false;
       Get.offAndToNamed(Routes.CHOOSE_USER);
     } catch (err) {

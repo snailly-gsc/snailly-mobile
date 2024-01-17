@@ -42,7 +42,7 @@ class HomeView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Hi, Orang Tua",
+                              "Hi, Parents!",
                               style: extraBoldNunitoFontStyle.copyWith(
                                   fontSize: 18),
                             ),
@@ -75,7 +75,7 @@ class HomeView extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     // * Child Select
-                    Text('Nama anak ditinjau', style: boldNunitoFontStyle),
+                    Text('Child’s name reviewed', style: boldNunitoFontStyle),
                     const SizedBox(height: 8),
                     Obx(
                       () => InputSelect(
@@ -108,7 +108,7 @@ class HomeView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Konten Ringkasan Bulanan Diakses',
+                                    'Monthly Summary Content Accessed',
                                     style: semiBoldNunitoFontStyle.copyWith(
                                       fontSize: 16,
                                       color: grayColor,
@@ -136,7 +136,7 @@ class HomeView extends StatelessWidget {
                                           child: Column(
                                             children: [
                                               Text(
-                                                'Persentase',
+                                                'Percentage',
                                                 style: semiBoldNunitoFontStyle
                                                     .copyWith(
                                                   color: grayColor,
@@ -177,7 +177,7 @@ class HomeView extends StatelessWidget {
                                           child: Column(
                                             children: [
                                               Text(
-                                                'Positif',
+                                                'Positive',
                                                 style: semiBoldNunitoFontStyle
                                                     .copyWith(
                                                   color: grayColor,
@@ -213,7 +213,7 @@ class HomeView extends StatelessWidget {
                                           child: Column(
                                             children: [
                                               Text(
-                                                'Negatif',
+                                                'Negative',
                                                 style: semiBoldNunitoFontStyle
                                                     .copyWith(
                                                   color: grayColor,
@@ -240,8 +240,8 @@ class HomeView extends StatelessWidget {
                                                 .persentageSafeWebsite! >=
                                             controller.summary.value
                                                 .persentageDangerousWebsite!
-                                        ? 'Anak Anda mengakses ${controller.summary.value.persentageSafeWebsite}% konten positif'
-                                        : 'Anak Anda mengakses ${controller.summary.value.persentageDangerousWebsite}% konten negatif',
+                                        ? 'Your child accessed ${controller.summary.value.persentageSafeWebsite}% positive content'
+                                        : 'Your child accessed ${controller.summary.value.persentageDangerousWebsite}% negative content',
                                     style: semiBoldNunitoFontStyle.copyWith(
                                       color: lightGreenColor,
                                     ),
@@ -256,7 +256,7 @@ class HomeView extends StatelessWidget {
               // * Tabbar
               Obx(
                 () => CustomTabBar(
-                  titles: const ['Semua', 'Harian', 'Bulanan'],
+                  titles: const ['All', 'Daily', 'Monthly'],
                   selectedIndex: controller.selectedIndex.value,
                   onTap: (index) {
                     controller.selectedIndex.value = index;

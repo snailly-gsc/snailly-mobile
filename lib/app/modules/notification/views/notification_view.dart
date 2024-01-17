@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
-import 'package:snailly/app/data/models/notification_model.dart';
 import 'package:snailly/app/routes/app_pages.dart';
 import 'package:snailly/app/shared/shared.dart';
 import 'package:snailly/app/widgets/widgets.dart';
@@ -48,7 +47,7 @@ class NotificationView extends GetView<NotificationController> {
                       SvgPicture.asset('assets/icons/ic_chevron_left.svg'),
                       const SizedBox(width: 10),
                       Text(
-                        'Notifikasi',
+                        'Notification',
                         style: boldNunitoFontStyle.copyWith(
                           color: lightGreenColor,
                           fontSize: 20,

@@ -26,19 +26,19 @@ class ChildView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 30),
                   Text(
-                    "Kelola Data Anak",
+                    "Manage Children Data",
                     style: extraBoldNunitoFontStyle.copyWith(fontSize: 18),
                   ),
                   const SizedBox(height: 25),
                   // * Form Child
-                  Text('Nama Anak', style: boldNunitoFontStyle),
+                  Text('Child Name', style: boldNunitoFontStyle),
                   const SizedBox(height: 8),
                   InputTextWhite(
                     controller: controller.namaController,
-                    hint: 'Tulis nama di sini',
+                    hint: 'Type name here',
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Nama tidak boleh kosong';
+                        return 'Name cannot be empty';
                       }
 
                       return null;
@@ -47,7 +47,7 @@ class ChildView extends StatelessWidget {
                   const SizedBox(height: 16),
                   // * Button
                   Button(
-                    text: 'Tambah Anak',
+                    text: 'Add Child',
                     onTap: () {
                       if (controller.formKey.currentState!.validate()) {
                         controller.createChild();

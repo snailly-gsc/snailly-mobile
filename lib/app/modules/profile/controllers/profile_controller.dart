@@ -87,7 +87,7 @@ class ProfileController extends GetxController {
       print(response.body);
 
       if (response.statusCode == 200) {
-        showSnackBar("Berhasil Update Profile!", status: "Berhasil");
+        showSnackBar("Update Profile Successfully!", status: "Berhasil");
         isLoading.value = false;
 
         box.write('dataUser', {

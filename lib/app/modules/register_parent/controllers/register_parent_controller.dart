@@ -23,7 +23,8 @@ class RegisterParentController extends GetxController {
         EmailValidator.validate(emailController.text)) {
       try {
         isLoading.value = true;
-        final response = await http.post(Uri.parse(dotenv.get('BASE_URL') + _endPoint), body: {
+        final response = await http
+            .post(Uri.parse(dotenv.get('BASE_URL') + _endPoint), body: {
           "name": namaController.text,
           "email": emailController.text,
           "password": passwordController.text,
@@ -33,7 +34,8 @@ class RegisterParentController extends GetxController {
         if (response.statusCode == 200) {
           isLoading.value = false;
           Get.back();
-          showSnackBar("Berhasil membuat akun orang tua", status: "Berhasil");
+          showSnackBar("Successfully create a parent account",
+              status: "Berhasil");
           log(response.body);
         } else {
           isLoading.value = false;
@@ -52,7 +54,7 @@ class RegisterParentController extends GetxController {
         showSnackBar(err.toString());
       }
     } else {
-      showSnackBar("Format email tidak sesuai!!");
+      showSnackBar("The email format does not match!");
     }
 
     isLoading.value = false;
