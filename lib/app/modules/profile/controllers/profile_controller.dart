@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:snailly/app/routes/app_pages.dart';
 import 'package:snailly/app/shared/shared.dart';
-import 'package:snailly/app/utils/constanta.dart';
 
 class ProfileController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -38,7 +38,7 @@ class ProfileController extends GetxController {
     try {
       var response = await http.post(
           Uri.parse(
-            baseUrl + _endPointLogout,
+            dotenv.get('BASE_URL') + _endPointLogout,
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
 
@@ -78,7 +78,7 @@ class ProfileController extends GetxController {
 
       var response = await http.put(
         Uri.parse(
-          baseUrl + _endPointUpdate + dataUser['id'],
+          dotenv.get('BASE_URL') + _endPointUpdate + dataUser['id'],
         ),
         headers: {'Authorization': 'Bearer $accessToken'},
         body: body,

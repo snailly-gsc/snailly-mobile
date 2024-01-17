@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -10,7 +11,6 @@ import 'package:http/http.dart' as http;
 import 'package:snailly/app/data/models/log_activity_model.dart';
 import 'package:snailly/app/data/models/summary.dart';
 import 'package:snailly/app/shared/shared.dart';
-import 'package:snailly/app/utils/constanta.dart';
 import 'package:snailly/app/widgets/widgets.dart';
 import 'package:supercharged/supercharged.dart';
 
@@ -88,7 +88,7 @@ class HomeController extends GetxController {
       isLoadingChild.value = true;
       var response = await http.get(
           Uri.parse(
-            baseUrl + _endPointChild,
+            dotenv.get('BASE_URL') + _endPointChild,
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
 
@@ -116,7 +116,7 @@ class HomeController extends GetxController {
       isLoadingSummary.value = true;
       var response = await http.get(
           Uri.parse(
-            baseUrl + _endPointSummary + child.value.id!,
+            dotenv.get('BASE_URL') + _endPointSummary + child.value.id!,
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
 
@@ -141,7 +141,7 @@ class HomeController extends GetxController {
     try {
       var response = await http.get(
         Uri.parse(
-          '$baseUrl$_endPointLog${child.value.id!}?page=${page.value}&limit=${limit.value}',
+          '${dotenv.get('BASE_URL')}$_endPointLog${child.value.id!}?page=${page.value}&limit=${limit.value}',
         ),
         headers: {'Authorization': 'Bearer $accessToken'},
       );
@@ -167,12 +167,12 @@ class HomeController extends GetxController {
     DateTime newDate = selectedDate.value.subtract(const Duration(days: 1));
 
     print(
-        '$baseUrl$_endPointLog${child.value.id!}?period=daily&date=${newDate.day}&month=${newDate.month}&year=${newDate.year}&page=${page.value}&limit=${limit.value}');
+        '${dotenv.get('BASE_URL')}$_endPointLog${child.value.id!}?period=daily&date=${newDate.day}&month=${newDate.month}&year=${newDate.year}&page=${page.value}&limit=${limit.value}');
 
     try {
       var response = await http.get(
           Uri.parse(
-            '$baseUrl$_endPointLog${child.value.id!}?period=daily&date=${newDate.day}&month=${newDate.month}&year=${newDate.year}&page=${page.value}&limit=${limit.value}',
+            '${dotenv.get('BASE_URL')}$_endPointLog${child.value.id!}?period=daily&date=${newDate.day}&month=${newDate.month}&year=${newDate.year}&page=${page.value}&limit=${limit.value}',
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
 
@@ -195,12 +195,12 @@ class HomeController extends GetxController {
     String accessToken = data["token"];
 
     print(
-        '$baseUrl$_endPointLog${child.value.id!}?period=monthly&month=${selectedDate.value.month}&year=${selectedDate.value.year}&page=${page.value}&limit=${limit.value}');
+        '${dotenv.get('BASE_URL')}$_endPointLog${child.value.id!}?period=monthly&month=${selectedDate.value.month}&year=${selectedDate.value.year}&page=${page.value}&limit=${limit.value}');
 
     try {
       var response = await http.get(
           Uri.parse(
-            '$baseUrl$_endPointLog${child.value.id!}?period=monthly&month=${selectedDate.value.month}&year=${selectedDate.value.year}&page=${page.value}&limit=${limit.value}',
+            '${dotenv.get('BASE_URL')}$_endPointLog${child.value.id!}?period=monthly&month=${selectedDate.value.month}&year=${selectedDate.value.year}&page=${page.value}&limit=${limit.value}',
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
 
@@ -225,7 +225,7 @@ class HomeController extends GetxController {
       isLoadingLog.value = true;
 
       final response = await http.put(
-        Uri.parse(baseUrl + _endPointGrantAccess + id),
+        Uri.parse(dotenv.get('BASE_URL') + _endPointGrantAccess + id),
         headers: {'Authorization': 'Bearer $accessToken'},
         body: {
           "grantAccess": isAllow,

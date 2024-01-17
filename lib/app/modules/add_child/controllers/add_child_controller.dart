@@ -1,5 +1,5 @@
-import 'package:snailly/app/utils/constanta.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
@@ -15,7 +15,7 @@ class AddChildController extends GetxController {
     try {
       if (nameController.text.isNotEmpty) {
         final response = await http.post(
-          Uri.parse(baseUrl + _endPoint),
+          Uri.parse(dotenv.get('BASE_URL') + _endPoint),
           headers: {'Authorization': 'Bearer $accessToken'},
           body: {
             'name': nameController.text,

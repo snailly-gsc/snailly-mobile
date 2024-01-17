@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -8,7 +9,6 @@ import 'package:http/http.dart' as http;
 import 'package:snailly/app/data/models/child.dart';
 import 'package:snailly/app/modules/main/controllers/main_controller.dart';
 import 'package:snailly/app/shared/shared.dart';
-import 'package:snailly/app/utils/constanta.dart';
 import 'package:supercharged/supercharged.dart';
 
 class ChildController extends GetxController {
@@ -30,7 +30,7 @@ class ChildController extends GetxController {
       controller.isLoading.value = true;
       var response = await http.get(
           Uri.parse(
-            baseUrl + _endPoint,
+            dotenv.get('BASE_URL') + _endPoint,
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
 
@@ -57,7 +57,7 @@ class ChildController extends GetxController {
         controller.isLoading.value = true;
 
         final response = await http.post(
-          Uri.parse(baseUrl + _endPoint),
+          Uri.parse(dotenv.get('BASE_URL') + _endPoint),
           headers: {'Authorization': 'Bearer $accessToken'},
           body: {
             'name': namaController.text,
@@ -98,7 +98,7 @@ class ChildController extends GetxController {
       controller.isLoading.value = true;
 
       final response = await http.delete(
-        Uri.parse(baseUrl + _endPoint + child.id!),
+        Uri.parse(dotenv.get('BASE_URL') + _endPoint + child.id!),
         headers: {'Authorization': 'Bearer $accessToken'},
       );
 
@@ -124,7 +124,7 @@ class ChildController extends GetxController {
         controller.isLoading.value = true;
 
         final response = await http.put(
-          Uri.parse(baseUrl + _endPoint + child.id!),
+          Uri.parse(dotenv.get('BASE_URL') + _endPoint + child.id!),
           headers: {'Authorization': 'Bearer $accessToken'},
           body: {
             'name': namaEditController.text,

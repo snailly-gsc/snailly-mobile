@@ -1,12 +1,12 @@
  import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:snailly/app/data/models/notification_model.dart';
 import 'package:snailly/app/routes/app_pages.dart';
 import 'package:snailly/app/shared/shared.dart';
-import 'package:snailly/app/utils/constanta.dart';
 
 class ActionParentController extends GetxController {
   final _endPoint = "log/grant-access/";
@@ -41,7 +41,7 @@ class ActionParentController extends GetxController {
       isLoading.value = true;
       var response = await http.put(
         Uri.parse(
-          baseUrl + _endPoint + logId,
+          dotenv.get('BASE_URL') + _endPoint + logId,
         ),
         headers: {'Authorization': 'Bearer $accessToken'},
         body: {

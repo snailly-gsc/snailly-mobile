@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:snailly/app/routes/app_pages.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,7 +10,6 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:snailly/app/shared/shared.dart';
 import 'package:http/http.dart' as http;
-import 'package:snailly/app/utils/constanta.dart';
 
 class LoginMoveToReportiorController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -31,7 +31,7 @@ class LoginMoveToReportiorController extends GetxController {
       if (passwordController.text == data["password"]) {
         var registrationToken = await getToken();
         final response =
-            await http.post(Uri.parse("${baseUrl}auth/login"), body: {
+            await http.post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
           "email": data['email'],
           "password": passwordController.text,
           "registrationToken": registrationToken

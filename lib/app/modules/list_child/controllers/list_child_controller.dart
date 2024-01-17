@@ -3,12 +3,12 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'package:http/http.dart' as http;
 import '../../../data/models/child.dart';
-import '../../../utils/constanta.dart';
 
 class ListChildController extends GetxController {
   final _endPoint = "child";
@@ -22,7 +22,7 @@ class ListChildController extends GetxController {
     try {
       var response = await http.get(
           Uri.parse(
-            baseUrl + _endPoint,
+            dotenv.get('BASE_URL') + _endPoint,
           ),
           headers: {'Authorization': 'Bearer $accessToken'});
       // print(response.body);
