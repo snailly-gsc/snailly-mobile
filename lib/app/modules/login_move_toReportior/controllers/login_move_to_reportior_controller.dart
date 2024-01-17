@@ -49,7 +49,7 @@ class LoginMoveToReportiorController extends GetxController {
             'registrationToken': registrationToken,
           });
 
-          showSnackBar("Login Successful", status: "Berhasil");
+          showSnackBar("Login Successful", status: "Success");
           isLoading.value = false;
           Get.offAndToNamed(Routes.MAIN);
         } else {

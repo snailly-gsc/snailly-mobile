@@ -126,7 +126,7 @@ class PreviewWebsiteView extends GetView<PreviewWebsiteController> {
                 children: [
                   const SizedBox(height: 25),
                   Text(
-                    'Pratinjau website yang dikunjungi',
+                    'Preview of visited websites',
                     style: boldNunitoFontStyle.copyWith(
                       color: blackColor,
                       fontSize: 16,
@@ -134,7 +134,7 @@ class PreviewWebsiteView extends GetView<PreviewWebsiteController> {
                   ),
                   const SizedBox(height: 28),
                   Button(
-                    text: 'Tindak Lanjuti',
+                    text: 'Follow-up',
                     onTap: () {
                       Get.back();
                     },

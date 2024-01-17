@@ -43,7 +43,7 @@ class ReportMonthlyView extends StatelessWidget {
               ? const SizedBox()
               : controller.logs.isEmpty
                   ? Text(
-                      'Data tidak ada.',
+                      'Data is not available.',
                       style: mediumNunitoFontStyle.copyWith(color: grayColor),
                     )
                   : makeLoadingIndicator(),

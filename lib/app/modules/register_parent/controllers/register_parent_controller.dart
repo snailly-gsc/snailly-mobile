@@ -35,7 +35,7 @@ class RegisterParentController extends GetxController {
           isLoading.value = false;
           Get.back();
           showSnackBar("Successfully create a parent account",
-              status: "Berhasil");
+              status: "Success");
           log(response.body);
         } else {
           isLoading.value = false;

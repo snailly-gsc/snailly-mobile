@@ -3,73 +3,72 @@ part of 'extensions.dart';
 extension DateTimeExtension on DateTime {
   String get monthYear => '$monthName - $year';
   String get dateYear => '$dayName, $day $monthName $year';
-  String get dateYearTime =>
-      '$dayName, $day $monthName $year $hour:$minute WIB';
+  String get dateYearTime => '$dayName, $day $monthName $year $hour:$minute';
 
   String get shortDayName {
     switch (weekday) {
       case 1:
-        return 'Sen';
+        return 'Mon';
       case 2:
-        return 'Sel';
+        return 'Tue';
       case 3:
-        return 'Rab';
+        return 'Wed';
       case 4:
-        return 'Kam';
+        return 'Thu';
       case 5:
-        return 'Jum';
+        return 'Fri';
       case 6:
-        return 'Sab';
+        return 'Sat';
       default:
-        return 'Min';
+        return 'Sun';
     }
   }
 
   String get dayName {
     switch (weekday) {
       case 1:
-        return 'Senin';
+        return 'Monday';
       case 2:
-        return 'Selasa';
+        return 'Tuesday';
       case 3:
-        return 'Rabu';
+        return 'Wednesday';
       case 4:
-        return 'Kamis';
+        return 'Thursday';
       case 5:
-        return 'Jumat';
+        return 'Friday';
       case 6:
-        return 'Sabtu';
+        return 'Saturday';
       default:
-        return 'Minggu';
+        return 'Sunday';
     }
   }
 
   String get monthName {
     switch (month) {
       case 1:
-        return 'Januari';
+        return 'January';
       case 2:
-        return 'Februari';
+        return 'February';
       case 3:
-        return 'Maret';
+        return 'March';
       case 4:
         return 'April';
       case 5:
-        return 'Mei';
+        return 'May';
       case 6:
-        return 'Juni';
+        return 'June';
       case 7:
-        return 'Juli';
+        return 'July';
       case 8:
-        return 'Agustus';
+        return 'August';
       case 9:
         return 'September';
       case 10:
-        return 'Oktober';
+        return 'October';
       case 11:
         return 'November';
       default:
-        return 'Desember';
+        return 'December';
     }
   }
 

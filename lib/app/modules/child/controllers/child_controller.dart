@@ -67,7 +67,7 @@ class ChildController extends GetxController {
         if (response.statusCode == 200) {
           controller.isLoading.value = false;
           namaController.clear();
-          showSnackBar("Successfully add child data", status: "Berhasil");
+          showSnackBar("Successfully add child data", status: "Success");
           getChilds();
         } else {
           controller.isLoading.value = false;
@@ -103,11 +103,11 @@ class ChildController extends GetxController {
       );
 
       if (response.statusCode != 200) {
-        throw "Data anak tidak bisa dihapus";
+        throw "Child data cannot be deleted";
       }
 
       controller.isLoading.value = false;
-      openDialogSuccess('Berhasil menghapus data');
+      openDialogSuccess('Successfully delete data');
       getChilds();
     } catch (err) {
       controller.isLoading.value = false;

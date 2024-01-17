@@ -12,7 +12,6 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeago.setLocaleMessages('id', timeago.IdMessages());
     return Container(
       decoration: BoxDecoration(
         border: Border(

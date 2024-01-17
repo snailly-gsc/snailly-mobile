@@ -29,7 +29,7 @@ class HomeController extends GetxController {
 
   // Child
   var childs = [].obs;
-  var child = Child(id: 'ALL', name: 'Semua').obs;
+  var child = Child(id: 'ALL', name: 'All').obs;
   var isLoadingChild = false.obs;
 
   // Summary
@@ -99,7 +99,7 @@ class HomeController extends GetxController {
       isLoadingChild.value = false;
       var data = json.decode(response.body)["data"] as List<dynamic>;
 
-      childs.value = [Child(id: 'ALL', name: 'Semua')];
+      childs.value = [Child(id: 'ALL', name: 'All')];
       childs.addAll(Child.fromJsonList(data));
     } catch (err) {
       isLoadingChild.value = false;
@@ -266,8 +266,8 @@ class HomeController extends GetxController {
               const SizedBox(height: 10),
               Text(
                 isAllow == 'True'
-                    ? 'Yakin untuk Buka Kunci Website?'
-                    : 'Yakin untuk Kunci Website?',
+                    ? 'Convinced to Unlock Website?'
+                    : 'Convinced to Lock Website?',
                 textAlign: TextAlign.center,
                 style: boldNunitoFontStyle.copyWith(
                   color: blackColor,
@@ -277,8 +277,8 @@ class HomeController extends GetxController {
               const SizedBox(height: 4),
               Text(
                 isAllow == 'True'
-                    ? 'Domain dengan website tersebut akan di kunci bisa di akses'
-                    : 'Domain dengan website tersebut akan di kunci tidak bisa di akses',
+                    ? 'The domain with the website will be locked can be accessed'
+                    : 'The domain with the website will be locked and cannot be accessed.',
                 textAlign: TextAlign.center,
                 style: boldNunitoFontStyle.copyWith(color: grayColor),
               ),
@@ -302,7 +302,7 @@ class HomeController extends GetxController {
                           borderRadius: BorderRadius.all(Radius.circular(6)),
                         ),
                       ),
-                      child: Text('Batal',
+                      child: Text('Cancel',
                           style: boldNunitoFontStyle.copyWith(
                             color: grayColor,
                           )),
@@ -312,7 +312,7 @@ class HomeController extends GetxController {
                     ),
                   ),
                   Button(
-                    text: 'Ya',
+                    text: 'Yes',
                     width: 125,
                     height: 45,
                     buttonStyle: makeButton(lightGreenColor, borderRadius: 6),

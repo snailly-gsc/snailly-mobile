@@ -77,12 +77,12 @@ class LoginMoveToReportiorView extends GetView<LoginMoveToReportiorController> {
                       const SizedBox(height: 8),
                       InputPassword(
                         controller: controller.passwordController,
-                        hint: 'Tulis password di sini',
+                        hint: 'Type your password here',
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Password tidak boleh kosong';
+                            return 'Password cannot be empty';
                           } else if (value.length < 8) {
-                            return 'Password minimal 8 karakter';
+                            return 'Password must be at least 8 characters';
                           }
 
                           return null;
@@ -94,7 +94,7 @@ class LoginMoveToReportiorView extends GetView<LoginMoveToReportiorController> {
                         () => controller.isLoading.value == true
                             ? makeLoadingIndicator()
                             : Button(
-                                text: 'Masuk',
+                                text: 'Login',
                                 onTap: () async {
                                   if (controller.formKey.currentState!
                                       .validate()) {
