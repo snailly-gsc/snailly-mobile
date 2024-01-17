@@ -37,12 +37,12 @@ class ChooseChildView extends GetView<ChooseChildController> {
                         SizedBox(
                             height: MediaQuery.of(context).size.height / 8),
                         Text(
-                          "Hi! What’s your name?",
+                          "Hai! Siapa namamu?",
                           textAlign: TextAlign.center,
                           style: headingPrimaryFontStyle,
                         ),
                         Text(
-                          "Make sure you choose the right name",
+                          "Pastikan Anda memilih nama yang tepat",
                           textAlign: TextAlign.center,
                           style: headingSecondaryFontStyle,
                         ),
@@ -62,7 +62,7 @@ class ChooseChildView extends GetView<ChooseChildController> {
                           children: [
                             controller.childs.isEmpty
                                 ? Text(
-                                    "There is no child data.",
+                                    "Data anak tidak ada.",
                                     style: headingSecondaryFontStyle.copyWith(
                                         color: blackColor),
                                   )

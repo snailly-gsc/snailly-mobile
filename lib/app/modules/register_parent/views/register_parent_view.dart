@@ -41,12 +41,12 @@ class RegisterParentView extends GetView<RegisterParentController> {
                                   height:
                                       MediaQuery.of(context).size.height / 8),
                               Text(
-                                "Account Registration",
+                                "Registrasi Akun",
                                 textAlign: TextAlign.center,
                                 style: headingPrimaryFontStyle,
                               ),
                               Text(
-                                "Regist date here for monitor the children",
+                                "Daftar di sini untuk memantau anak-anak",
                                 textAlign: TextAlign.center,
                                 style: headingSecondaryFontStyle,
                               ),
@@ -61,19 +61,19 @@ class RegisterParentView extends GetView<RegisterParentController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // * Name
+                          // * Nama
                           Text(
-                            'Name',
+                            'Nama',
                             style:
                                 boldNunitoFontStyle.copyWith(color: blackColor),
                           ),
                           const SizedBox(height: 8),
                           InputText(
                             controller: controller.namaController,
-                            hint: 'Type your name here',
+                            hint: 'Tulis nama di sini',
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Name cannot be empty';
+                                return 'Nama tidak boleh kosong';
                               }
 
                               return null;
@@ -89,10 +89,10 @@ class RegisterParentView extends GetView<RegisterParentController> {
                           const SizedBox(height: 8),
                           InputText(
                             controller: controller.emailController,
-                            hint: 'Type your email here',
+                            hint: 'Tulis email di sini',
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Email cannot be empty';
+                                return 'Email tidak boleh kosong';
                               }
 
                               return null;
@@ -108,12 +108,12 @@ class RegisterParentView extends GetView<RegisterParentController> {
                           const SizedBox(height: 8),
                           InputPassword(
                             controller: controller.passwordController,
-                            hint: 'Type your password here',
+                            hint: 'Tulis password di sini',
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Password cannot be empty';
+                                return 'Password tidak boleh kosong';
                               } else if (value.length < 8) {
-                                return 'Password at least 8 characters';
+                                return 'Password minimal 8 karakter';
                               }
 
                               return null;
@@ -122,22 +122,22 @@ class RegisterParentView extends GetView<RegisterParentController> {
                           const SizedBox(height: 16),
                           // * Konfirmasi Password
                           Text(
-                            'Confirm Password',
+                            'Konfirmasi Password',
                             style:
                                 boldNunitoFontStyle.copyWith(color: blackColor),
                           ),
                           const SizedBox(height: 8),
                           InputPassword(
                             controller: controller.confPasswordController,
-                            hint: 'Type your password here',
+                            hint: 'Tulis password di sini',
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Password cannot be empty';
+                                return 'Password tidak boleh kosong';
                               } else if (value.length < 8) {
-                                return 'Password at least 8 characters';
+                                return 'Password minimal 8 karakter';
                               } else if (controller.passwordController.text !=
                                   value) {
-                                return 'Password and password confirmation do not match';
+                                return 'Password dan konfirmasi password tidak sesuai';
                               }
 
                               return null;
@@ -146,7 +146,7 @@ class RegisterParentView extends GetView<RegisterParentController> {
                           const SizedBox(height: 30),
                           // * Button
                           Button(
-                            text: 'Register',
+                            text: 'Daftar',
                             onTap: () async {
                               if (controller.formKey.currentState!.validate()) {
                                 controller.registerAccountParent();
@@ -159,7 +159,7 @@ class RegisterParentView extends GetView<RegisterParentController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'You have an account?',
+                                'Sudah punya akun?',
                                 style: semiBoldNunitoFontStyle.copyWith(
                                     color: grayColor),
                               ),
@@ -169,7 +169,7 @@ class RegisterParentView extends GetView<RegisterParentController> {
                                   Get.back();
                                 },
                                 child: Text(
-                                  'Login',
+                                  'Masuk',
                                   style: semiBoldNunitoFontStyle.copyWith(
                                     color: successColor,
                                   ),

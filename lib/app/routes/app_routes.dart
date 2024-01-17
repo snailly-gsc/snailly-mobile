@@ -21,6 +21,7 @@ abstract class Routes {
   static const ALLOW_PARENT = _Paths.ALLOW_PARENT;
   static const BLOCK_PARENT = _Paths.BLOCK_PARENT;
   static const PREVIEW_WEBSITE = _Paths.PREVIEW_WEBSITE;
+  static const TEST = _Paths.TEST;
 }
 
 abstract class _Paths {
@@ -43,4 +44,5 @@ abstract class _Paths {
   static const ALLOW_PARENT = '/allow-parent';
   static const BLOCK_PARENT = '/block-parent';
   static const PREVIEW_WEBSITE = '/preview-website';
+  static const TEST = '/test';
 }

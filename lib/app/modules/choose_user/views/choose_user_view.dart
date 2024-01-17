@@ -72,15 +72,15 @@ class ChooseUserView extends GetView<ChooseUserController> {
                       children: [
                         ChooseUserCard(
                           icon: 'assets/icons/ic_parent.svg',
-                          title: "Parent",
+                          title: "Orang Tua",
                           onTap: () {
-                            // Get.toNamed(Routes.LOGIN_MOVE_TO_REPORTIOR);
+                            Get.toNamed(Routes.LOGIN_MOVE_TO_REPORTIOR);
                           },
                         ),
                         const SizedBox(width: 10),
                         ChooseUserCard(
                           icon: 'assets/icons/ic_child.svg',
-                          title: "Kids",
+                          title: "Anak",
                           onTap: () {
                             Get.toNamed(Routes.CHOOSE_CHILD);
                           },

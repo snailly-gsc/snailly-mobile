@@ -23,8 +23,7 @@ class RegisterParentController extends GetxController {
         EmailValidator.validate(emailController.text)) {
       try {
         isLoading.value = true;
-        final response = await http
-            .post(Uri.parse(dotenv.get('BASE_URL') + _endPoint), body: {
+        final response = await http.post(Uri.parse(dotenv.get('BASE_URL') + _endPoint), body: {
           "name": namaController.text,
           "email": emailController.text,
           "password": passwordController.text,

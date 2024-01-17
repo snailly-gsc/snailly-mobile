@@ -11,7 +11,6 @@ import 'package:snailly/app/data/models/child.dart';
 import 'package:snailly/app/data/models/dangerous_website.dart';
 import 'package:snailly/app/data/models/global.dart';
 import 'package:snailly/app/shared/shared.dart';
-
 import 'package:snailly/app/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -67,8 +66,8 @@ class BrowserSurfiorController extends GetxController {
     print('urlorigin: $urlOrigin');
 
     try {
-      final response = await http
-          .post(Uri.parse(dotenv.get('BASE_URL') + _endPoint), headers: {
+      final response =
+          await http.post(Uri.parse(dotenv.get('BASE_URL') + _endPoint), headers: {
         'Authorization': 'Bearer $accessToken'
       }, body: {
         'parentId': dataUser['id'],
@@ -248,7 +247,7 @@ class BrowserSurfiorController extends GetxController {
   //     final dataUser = box.read("dataUser") as Map<String, dynamic>;
 
   //     var response = await http.get(Uri.parse(
-  //       "${dotenv.get('BASE_URL') + _endPointClassified + dataUser["id"]}?domain=${url?.origin}",
+  //       "${baseUrl + _endPointClassified + dataUser["id"]}?domain=${url?.origin}",
   //     ));
 
   //     if (response.statusCode != 200) {

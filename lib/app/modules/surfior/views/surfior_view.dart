@@ -48,7 +48,7 @@ class SurfiorView extends GetView<SurfiorController> {
                   child: Padding(
                     padding: const EdgeInsets.all(defaultPadding),
                     child: Text(
-                      'What do you wanna search, kids?',
+                      'Apa yang kamu ingin cari, anak-anak?',
                       style: extraBoldNunitoFontStyle.copyWith(
                         color: greenColor,
                         fontSize: 30,
@@ -112,7 +112,7 @@ class SurfiorView extends GetView<SurfiorController> {
                             ),
                           ),
                         ),
-                        hintText: "Type or speak it!",
+                        hintText: "Ketik atau ucapkan!",
                         hintStyle: mediumNunitoFontStyle.copyWith(
                           fontSize: 18,
                           color: '666666'.toColor(),

@@ -4,7 +4,6 @@ import 'dart:developer';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:snailly/app/routes/app_pages.dart';
 import 'package:snailly/app/shared/shared.dart';
-
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -44,8 +43,8 @@ class LoginParentsController extends GetxController {
   Future loginParent() async {
     try {
       isLoading.value = true;
-      final response = await http
-          .post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
+      final response =
+          await http.post(Uri.parse("${dotenv.get('BASE_URL')}auth/login"), body: {
         "email": emailController.text,
         "password": passwordController.text,
       });
