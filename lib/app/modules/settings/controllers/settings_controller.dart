@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:snailly/app/utils/constanta.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -30,8 +30,8 @@ class SettingsController extends GetxController {
     try {
       if (oldPasswordController.text == password) {
         if (newPasswordController.text.length >= 8) {
-          final reponse =
-              await http.post(Uri.parse(baseUrl + _endpoint), headers: {
+          final reponse = await http
+              .post(Uri.parse(dotenv.get('BASE_URL') + _endpoint), headers: {
             'Authorization': 'Bearer $token'
           }, body: {
             'email': emailController.text,
