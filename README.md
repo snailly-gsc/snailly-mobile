@@ -1,5 +1,5 @@
 ## Snailly Mobile
-<img width="1600" alt="banner" src="https://github.com/snailly-hackfest/snailly-mobile/assets/59524975/acbc3fe1-b8e8-4be0-ae34-c1509df00e9c">
+<img width="1600" alt="snailly" src="https://github.com/snailly-hackfest/snailly-mobile/assets/59524975/13babdce-c666-4b3e-a537-6daef7a2fdf4">
 
 ## Description
 <p>Snailly is an application for parents to control and supervise their children's activities on the internet.
